@@ -4,7 +4,6 @@
 <html>
 <head>
 
-
     <title>bookStore列表</title>
     <%--导入css --%>
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/main.css" type="text/css"/>
@@ -46,9 +45,6 @@
         </table>
     </div>
     </div>
-
 </div>
-
-
 </body>
 </html>

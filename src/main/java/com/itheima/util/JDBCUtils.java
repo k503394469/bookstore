@@ -11,19 +11,19 @@ import java.sql.Statement;
 import java.util.Properties;
 
 /**
- * DruidÁ¬½Ó³ØµÄ¹¤¾ßÀà
+ * Druidè¿æ¥æ± çš„å·¥å…·ç±»
  */
 public class JDBCUtils {
 
-    //1.¶¨Òå³ÉÔ±±äÁ¿ DataSource
+    //1.å®šä¹‰æˆå‘˜å˜é‡ DataSource
     private static DataSource ds;
 
     static {
         try {
-            //1.¼ÓÔØÅäÖÃÎÄ¼ş
+            //1.åŠ è½½é…ç½®æ–‡ä»¶
             Properties pro = new Properties();
             pro.load(JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties"));
-            //2.»ñÈ¡DataSource
+            //2.è·å–DataSource
             ds = DruidDataSourceFactory.createDataSource(pro);
         } catch (IOException e) {
             e.printStackTrace();
@@ -33,14 +33,14 @@ public class JDBCUtils {
     }
 
     /**
-     * »ñÈ¡Á¬½Ó
+     * è·å–è¿æ¥
      */
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
 
     /**
-     * ÊÍ·Å×ÊÔ´
+     * é‡Šæ”¾èµ„æº
      */
     public static void close(Statement stmt, Connection conn) {
         close(null, stmt, conn);
@@ -69,7 +69,7 @@ public class JDBCUtils {
 
         if (conn != null) {
             try {
-                conn.close();//¹é»¹Á¬½Ó
+                conn.close();//å½’è¿˜è¿æ¥
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -77,7 +77,7 @@ public class JDBCUtils {
     }
 
     /**
-     * »ñÈ¡Á¬½Ó³Ø·½·¨
+     * è·å–è¿æ¥æ± æ–¹æ³•
      */
 
     public static DataSource getDataSource() {
