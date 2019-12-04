@@ -31,11 +31,11 @@
             <form action="" method="post">
                 <tr align="center">
                     <td style="border-color: #5CA5D6;height: 40px"><label style="font-weight:bold;" >用户名:</label></td>
-                    <td><input type="text" name="username" ><br></td>
+                    <td><input type="text" name="username" id="username"><br></td>
                 </tr>
                 <tr align="center">
                     <td style="border-color: #5CA5D6"><label style="font-weight:bold;" >密码</label></td>
-                    <td> <input type="password" name="password"></td>
+                    <td> <input type="password" name="password" id="password"></td>
                 </tr>
                <tr>
                    <td colspan="2"><input type="submit" value="提交查询"></td>
