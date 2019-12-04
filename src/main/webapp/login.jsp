@@ -8,15 +8,15 @@
     <%--导入css --%>
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/main.css" type="text/css"/>
     <script src="js/my.js"></script>
-    <script src="js/jQuery.js"></script>
-    <script type="javascript">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
         $(function () {
             $("#username").blur(function () {
-                $.post("${pageContext.request.contextPath}/user/checkName",{},function (result) {
-                    if (result==true){
-                        $("#checkName").css("color","red").text(result.data);
-                    }else {
-                        $("#checkName").css("color","green").text(result.errorMsg);
+                $.post("${pageContext.request.contextPath}/user/checkName", {}, function (result) {
+                    if (result == true) {
+                        $("#checkName").css("color", "green").text(result.data);
+                    } else {
+                        $("#checkName").css("color", "red").text(result.errorMsg);
                     }
                 });
             });
@@ -33,10 +33,6 @@
                 }, "json");
             });
         });
-
-        function ct() {
-            alert("c");
-        }
     </script>
 </head>
 
@@ -62,14 +58,14 @@
                     <tr align="center">
                         <td style="border-color: #5CA5D6;height: 40px"><label style="font-weight:bold;">用户名:</label>
                         </td>
-                        <td><input type="text" name="username" id="username"><br></td>
-                    </tr><span id="checkName"></span>
+                        <td><input type="text" name="username" id="username"><span id="checkName"></span><br></td>
+                    </tr>
                     <tr align="center">
                         <td style="border-color: #5CA5D6"><label style="font-weight:bold;">密码</label></td>
                         <td><input type="password" name="password" id="password"></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><input type="button" value="提交查询" id="login_btn" onclick="ct();"></td>
+                        <td colspan="2"><input type="button" value="提交查询" id="login_btn"></td>
                     </tr>
                 </form>
             </table>
