@@ -12,4 +12,10 @@ public class UserServiceImpl implements UserService {
         User loginUser=dao.findUserByNameAndPassword(username, password);
         return loginUser;
     }
+
+    @Override
+    public User checkName(String username) {
+        User check=dao.findUserByName(username);
+        return check;
+    }
 }
