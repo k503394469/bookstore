@@ -12,8 +12,9 @@
     <script>
         $(function () {
             $("#username").blur(function () {
-                $.post("${pageContext.request.contextPath}/user/checkName", {}, function (result) {
-                    if (result == true) {
+                let username = $("#username").val();
+                $.post("${pageContext.request.contextPath}/user/checkName", {username:username}, function (result) {
+                    if (result.flag == true) {
                         $("#checkName").css("color", "green").text(result.data);
                     } else {
                         $("#checkName").css("color", "red").text(result.errorMsg);
@@ -26,7 +27,7 @@
                 $.post("${pageContext.request.contextPath}/user/login", $("#login_form").serialize(), function (result) {
                     let flag = result.flag;
                     if (flag == true) {
-                        alert("success");
+                        location.href="${pageContext.request.contextPath}/book/showBook?category=";
                     } else {
                         $("#errorMsg").html(result.errorMsg);
                     }
