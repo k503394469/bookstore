@@ -31,7 +31,7 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public List<Books> findBookListByPage(String category, String bookName, int start, int pageSize) {
-        String sql = "select * from tab_route where 1=1 ";
+        String sql = "select * from books where 1=1 ";
         StringBuilder sb = new StringBuilder(sql);
         List paras = new ArrayList();
         if (category!=null&&!"".equals(category)&&!"null".equals(category)){
@@ -39,7 +39,7 @@ public class BookDaoImpl implements BookDao {
             paras.add(category);
         }
         if (bookName!=null&&!"".equals(bookName)&&!"null".equals(bookName)){
-            sb.append(" and name like %"+bookName+"%");
+            sb.append(" and name like %"+bookName+"% ");
             paras.add(bookName);
         }
         sb.append(" limit ? , ?");
@@ -47,7 +47,7 @@ public class BookDaoImpl implements BookDao {
         paras.add(pageSize);
         sql = sb.toString();
         List<Books> booksList = jt.query(sql, new BeanPropertyRowMapper<>(Books.class), paras.toArray());
-        System.out.println(sql);
+        System.out.println(booksList);
         return booksList;
     }
 

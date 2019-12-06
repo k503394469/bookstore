@@ -5,7 +5,7 @@ import java.util.List;
 public class PageBean<T> {
     private int pageSize;
     private int currentPage;
-    private List<T> routeList;
+    private List<T> objectList;
     private int totalPage;
     private int totalCount;
     public int getTotalCount() {
@@ -32,12 +32,12 @@ public class PageBean<T> {
         this.currentPage = currentPage;
     }
 
-    public List<T> getRouteList() {
-        return routeList;
+    public List<T> getObjectList() {
+        return objectList;
     }
 
-    public void setRouteList(List<T> routeList) {
-        this.routeList = routeList;
+    public void setObjectList(List<T> objectList) {
+        this.objectList = objectList;
     }
 
     public int getTotalPage() {
@@ -48,4 +48,14 @@ public class PageBean<T> {
         this.totalPage = totalPage;
     }
 
+    @Override
+    public String toString() {
+        return "PageBean{" +
+                "pageSize=" + pageSize +
+                ", currentPage=" + currentPage +
+                ", objectList=" + objectList +
+                ", totalPage=" + totalPage +
+                ", totalCount=" + totalCount +
+                '}';
+    }
 }

@@ -27,7 +27,7 @@
                 $.post("${pageContext.request.contextPath}/user/login", $("#login_form").serialize(), function (result) {
                     let flag = result.flag;
                     if (flag == true) {
-                        location.href="${pageContext.request.contextPath}/book/showBook?category=";
+                        location.href="${pageContext.request.contextPath}/book/showBook";
                     } else {
                         $("#errorMsg").html(result.errorMsg);
                     }
