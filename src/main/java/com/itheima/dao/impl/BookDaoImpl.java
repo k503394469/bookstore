@@ -58,4 +58,16 @@ public class BookDaoImpl implements BookDao {
         return book;
     }
 
+    @Override
+    public void update(Books book) {
+        String sql="update books set name=?,price=?,pnum=?,category=? where id=?";
+        jt.update(sql,book.getName(),book.getPrice(),book.getPnum(),book.getCategory(),book.getId());
+    }
+
+    @Override
+    public void deleteByIdAndName(int id, String name) {
+        String sql="delete from books where id=? and name=?";
+        jt.update(sql,id,name);
+    }
+
 }

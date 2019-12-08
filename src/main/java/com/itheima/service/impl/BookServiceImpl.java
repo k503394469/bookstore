@@ -36,4 +36,14 @@ public class BookServiceImpl implements BookService {
         Books book=dao.findBookById(id);
         return book;
     }
+
+    @Override
+    public void editBook(Books book) {
+        dao.update(book);
+    }
+
+    @Override
+    public void deleteByIdAndName(int id, String name) {
+        dao.deleteByIdAndName(id,name);
+    }
 }

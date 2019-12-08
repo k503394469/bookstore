@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/main.css" type="text/css"/>
     <script src="${pageContext.request.contextPath }/js/jquery-3.3.1.js"></script>
     <script>
-        $(function () {
-
-        });
+        function delBook(id,name) {
+            $.post("${pageContext.request.contextPath }/book/delBook",{id:id,name:name},function (res) {
+                let delete_msg = res.data;
+                $("#delete_msg").css("color","greed").html(delete_msg);
+                location.reload();
+            },"json");
+        }
 
     </script>
 </head>
@@ -41,6 +45,7 @@
                                 <img src="${pageContext.request.contextPath }/images/productlist.gif" width="100%"
                                      height="38"/>
                             </div>
+                            <span id="delete_msg"></span>
                             <table cellspacing="0" cellpadding="1" rules="all"
                                    bordercolor="gray" border="1" id="DataGrid1"
                                    style="BORDER-RIGHT: gray 1px solid; BORDER-TOP: gray 1px solid; BORDER-LEFT: gray 1px solid; WIDTH: 100%; WORD-BREAK: break-all; BORDER-BOTTOM: gray 1px solid; BORDER-COLLAPSE: collapse; BACKGROUND-COLOR: #f5fafe; WORD-WRAP: break-word">
@@ -63,7 +68,7 @@
                                         <td>${b.pnum }</td>
                                         <td>${b.category }</td>
                                         <td><a
-                                                href="${pageContext.request.contextPath}/book/editBook?id=${b.id }">
+                                                href="${pageContext.request.contextPath}/book/findBookById?id=${b.id }">
                                             <img
                                                     src="${pageContext.request.contextPath}/images/i_edit.gif"
                                                     border="0" style="CURSOR: hand"> </a>

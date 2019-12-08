@@ -7,4 +7,8 @@ public interface BookService {
     PageBean<Books> findQuery(String category,String bookName,int currentPage,int pageSize);
 
     Books findBookById(int id);
+
+    void editBook(Books book);
+
+    void deleteByIdAndName(int id, String name);
 }
