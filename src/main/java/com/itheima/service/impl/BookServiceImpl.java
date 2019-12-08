@@ -30,4 +30,10 @@ public class BookServiceImpl implements BookService {
         page.setObjectList(bookList);
         return page;
     }
+
+    @Override
+    public Books findBookById(int id) {
+        Books book=dao.findBookById(id);
+        return book;
+    }
 }

@@ -51,4 +51,11 @@ public class BookDaoImpl implements BookDao {
         return booksList;
     }
 
+    @Override
+    public Books findBookById(int id) {
+        String sql="select * from books where id=?";
+        Books book = jt.queryForObject(sql, new BeanPropertyRowMapper<>(Books.class), id);
+        return book;
+    }
+
 }

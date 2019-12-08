@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/main.css" type="text/css"/>
     <script src="${pageContext.request.contextPath }/js/jquery-3.3.1.js"></script>
     <script>
+        $(function () {
+
+        });
 
     </script>
 </head>
@@ -60,7 +63,7 @@
                                         <td>${b.pnum }</td>
                                         <td>${b.category }</td>
                                         <td><a
-                                                href="${pageContext.request.contextPath}/book/findBookByIdServlet?id=${b.id }">
+                                                href="${pageContext.request.contextPath}/book/editBook?id=${b.id }">
                                             <img
                                                     src="${pageContext.request.contextPath}/images/i_edit.gif"
                                                     border="0" style="CURSOR: hand"> </a>

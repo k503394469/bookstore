@@ -5,4 +5,6 @@ import com.itheima.domain.PageBean;
 
 public interface BookService {
     PageBean<Books> findQuery(String category,String bookName,int currentPage,int pageSize);
+
+    Books findBookById(int id);
 }
