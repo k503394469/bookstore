@@ -34,7 +34,7 @@ public class BookDaoImpl implements BookDao {
         String sql = "select * from books where 1=1 ";
         StringBuilder sb = new StringBuilder(sql);
         List paras = new ArrayList();
-        if (category!=null&&!"".equals(category)&&!"null".equals(category)){
+        if (category!=null&&!"".equals(category)&&!"null".equals(category)&&!"all".equals(category)){
             sb.append(" and category=? ");
             paras.add(category);
         }

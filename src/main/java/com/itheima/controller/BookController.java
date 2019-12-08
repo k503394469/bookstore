@@ -16,6 +16,7 @@ import java.io.IOException;
 public class BookController extends BaseController {
     private BookService service=new BookServiceImpl();
     public void showBook(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
         String category = request.getParameter("category");
         String bookName = request.getParameter("bookName");

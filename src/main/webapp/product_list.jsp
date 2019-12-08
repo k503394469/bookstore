@@ -6,6 +6,10 @@
     <title>bookStore列表</title>
     <%--导入css --%>
     <link rel="stylesheet" href="${pageContext.request.contextPath }/css/main.css" type="text/css"/>
+    <script src="${pageContext.request.contextPath }/js/jquery-3.3.1.js"></script>
+    <script>
+
+    </script>
 </head>
 
 <body class="main">
