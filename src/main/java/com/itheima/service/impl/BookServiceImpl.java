@@ -16,9 +16,9 @@ public class BookServiceImpl implements BookService {
         if (currentPage<=0){
             currentPage=1;
         }
-        if (category==null||"".equals(category)||"null".equals(category)){
-            category="文学";
-        }
+//        if (category==null||"".equals(category)||"null".equals(category)){
+//            category="文学";
+//        }
         page.setCurrentPage(currentPage);
         page.setPageSize(pageSize);
         Integer count = dao.findCountByCategoryAndBookName(category, bookName);

@@ -53,7 +53,7 @@
             </div>
         </div>
         <div style="background-color: #5CA5D6">
-            <span id="errorMsg" style="color: red"></span>
+            <span id="errorMsg" style="color: red">${requestScope.error_msg}</span>
             <table border="1px" width="50%">
                 <form method="post" action="" id="login_form">
                     <tr align="center">

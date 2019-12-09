@@ -28,9 +28,9 @@ public class BookController extends BaseController {
         String bookName = request.getParameter("bookName");
         String currentPage_str = request.getParameter("currentPage");
 
-        if (category == null || "".equals(category)) {
-            category = "文学";
-        }
+//        if (category == null || "".equals(category)) {
+//            category = "文学";
+//        }
         int currentPage = 0;
         if (currentPage_str == null || "".equals(currentPage_str) || "null".equals(currentPage_str)) {
             currentPage = 1;
